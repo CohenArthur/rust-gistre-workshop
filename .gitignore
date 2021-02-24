@@ -1,1 +1,4 @@
 tags
+
+# Rust binary files
+target/
