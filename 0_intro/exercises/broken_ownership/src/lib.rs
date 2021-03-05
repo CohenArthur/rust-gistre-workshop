@@ -14,7 +14,7 @@ fn modify_values(values: Vec<i32>) {
 }
 
 /// Print the first word of the "hello world" message, then free the message
-/// Help me the borrowchecker is bullying me :(
+/// Help me the borrow checker is bullying me :(
 // FIXME
 pub fn print_hello() {
     let mut msg = String::from("hello world");
