@@ -14,15 +14,18 @@ code and give you various tips!
 In order to do so, please abide by the following guidelines:
 
 - Fork this repository
-It is *necessary* for the fork to be open-source! If not, we will *not* be able to review
+  - It is *necessary* for the fork to be open-source! If not, we will *not* be able to review
 your code.
+
 - Create a branch on your repository
-`git checkout -b exercises_intro`
-The name does not matter at all. But you must create a different branch for us to see
+  - `git checkout -b exercises_intro`
+  - The name does not matter at all. But you must create a different branch for us to see
 only the changes you wish to show us.
+
 - Work on your branch, completing exercises
-- Open a pull-request on *your own repository* (https://github.com/<your_username>/rust-gistre-workshop).
-You can ping us in the comments, ask us on Discord or send us an email. Pinging on Github
+
+- Open a pull-request on *your own repository* (`https://github.com/<your_username>/rust-gistre-workshop`)
+  - You can ping us in the comments, ask us on Discord or send us an email. Pinging on Github
 works the same as in Discord, `@<username>` will notify the user. Checkout [the team](#the-team)
 for our Github usernames! We will review the code as well as give you tips if you need them.
 
@@ -36,7 +39,7 @@ A *lot* of resources are available to learn Rust online!
 * [awesome-rust](https://github.com/rust-unofficial/awesome-rust)
 
 We won't have done them all, but there's a good chance we'll be able to help you understand
-them, realize them or review them. Feel free to ping us for those as well!
+them, complete them or review them. Feel free to ping us for those as well!
 
 # Going further
 
