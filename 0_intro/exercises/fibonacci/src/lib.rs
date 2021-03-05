@@ -1,4 +1,4 @@
-pub fn fibo(v: i32) -> i32 {
+pub fn fibo(v: u32) -> u32 {
     todo!()
 }
 
