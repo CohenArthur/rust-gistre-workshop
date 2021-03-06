@@ -1,4 +1,4 @@
-pub fn vec_sum(vec: Vec<i32>) -> usize {
+pub fn vec_sum(vec: Vec<i32>) -> i32 {
     todo!()
 }
 
