@@ -1,0 +1,9 @@
+[package]
+name = "vec_sum"
+version = "0.1.0"
+authors = ["Esteban Blanc <esteban.blanc@lse.epita.fr>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
