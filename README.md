@@ -52,3 +52,9 @@ on our projects. We'd be delighted to mentor you and have you work with us!
 * Martin Schmidt [@n1tram1](https://github.com/n1tram1)
 * Sander Julien-Saint-Amand [@SanderJSA](https://github.com/SanderJSA)
 * Arthur Cohen [@CohenArthur](https://github.com/cohenarthur)
+
+## Licensing
+
+The workshop is under the GPLv3 license.
+
+Copyright (C) 2021 Esteban Blanc, Martin Schmidt, Sander Julien-Saint-Amand, Arthur Cohen
