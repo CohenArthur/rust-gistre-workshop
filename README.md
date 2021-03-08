@@ -55,6 +55,6 @@ on our projects. We'd be delighted to mentor you and have you work with us!
 
 ## Licensing
 
-The workshop is under the GPLv3 license.
+The workshop and all its documents are under the GPLv3 license.
 
 Copyright (C) 2021 Esteban Blanc, Martin Schmidt, Sander Julien-Saint-Amand, Arthur Cohen
