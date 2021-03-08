@@ -2,7 +2,6 @@
 
 The goal of this live coding session is to reimplement a simple binary (`yes`) in its
 simplest form.
-
 ## Simplest simple form of yes
 
 When invoked without any arguments, `yes` simply prints the string "y" on stdout over
@@ -48,5 +47,10 @@ that!
 Using the clap crate, parse arguments given to your program and display something useful
 when using the `-h|--help` option. The program should contain an author, a version
 and a small description!
+
+## Going further - Splitting the code in modules
+
+Split the program in three files: `main.rs`, `args.rs` and `printer.rs`. Using `mod` and
+`use` directives, create a good looking architecture!
 
 ## Going further - Unit testing stdout
