@@ -1,0 +1,20 @@
+name: rgw-formatting
+
+on:
+  pull_request:
+
+jobs:
+  coding-style:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Check the coding style
+      run: |
+          set -e
+          export ROOT=$PWD
+          for rust_project in $(find . -name "Cargo.toml"); do
+            cd $(dirname $rust_project)
+            cargo fmt -- --check # Returns non-zero on error
+            cd $ROOT
+          done;
