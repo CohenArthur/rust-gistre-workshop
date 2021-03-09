@@ -22,12 +22,12 @@ fn main() {
         .version("0.1.0")
         .author("Me, myself and I")
         .about("yes but in Rust!")
-        .arg(Arg::with_name("Input string"))
+        .arg(Arg::with_name("input"))
         .get_matches();
 
     // Show that -h|--help is being generated automatically!
 
-    let first_arg = args.value_of("Input strings");
+    let first_arg = args.value_of("input");
 
     let s = get_string(first_arg);
 
@@ -47,6 +47,6 @@ mod tests {
 
     #[test]
     fn get_string_with_arg() {
-        assert_eq!(get_string(Some(String::from("GISTRE"))), "GISTRE");
+        assert_eq!(get_string(Some("GISTRE")), "GISTRE");
     }
 }
