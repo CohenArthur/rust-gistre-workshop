@@ -1,5 +1,5 @@
 // Show that you can use multiple modules at once
-use clap::{Arg, App};
+use clap::{App, Arg};
 
 // Probably need to change this from Option<String> to Option<&str>
 // since std::env::args().nth(...) returns a String but clap will return an &str.

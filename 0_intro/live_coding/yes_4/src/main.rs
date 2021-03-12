@@ -1,8 +1,8 @@
 mod args;
 mod printer;
 
-use printer::Printer;
 use args::Args;
+use printer::Printer;
 
 fn main() {
     let input = Args::get_input();

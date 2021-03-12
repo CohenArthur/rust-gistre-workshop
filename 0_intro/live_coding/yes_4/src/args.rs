@@ -3,7 +3,7 @@
 //
 // ```
 // pub struct Args;
-// 
+//
 // impl Args {
 //     pub fn get_input() ...
 //     pub fn get_string() ...
@@ -14,7 +14,7 @@
 // we didn't show them how to create structs yet...
 
 pub mod Args {
-    use clap::{Arg, App};
+    use clap::{App, Arg};
 
     pub fn get_input() -> Option<String> {
         let args = App::new("yes_but_in_Rust")

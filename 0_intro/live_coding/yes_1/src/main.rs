@@ -20,7 +20,8 @@ fn main() {
 
 // Explain conditional compilation
 #[cfg(test)]
-mod tests { // Quickly explain modules
+mod tests {
+    // Quickly explain modules
     use super::*; // Explain `use` and refer to C++ namespaces + the asterisk
 
     // Refer to Java Attributes, like @JUnitTest that we did
