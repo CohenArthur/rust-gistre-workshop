@@ -1,0 +1,12 @@
+[package]
+name = "yes_3"
+version = "0.1.0"
+authors = ["CohenArthur <arthur.cohen@epita.fr>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# Explain what crates.io is and how to use dependencies
+# Talk a bit about semver
+clap = "2.33"
