@@ -62,4 +62,34 @@ as MAUTO, RGW (us :D), BSP...
 ## 2 - Encapsulating everything
 
 Right now everything is public, which is a bit sad when it comes to object oriented. Let's
-make constructors and private functions.
+make constructors and private functions. Let's also add personel, whose job is to take
+care of the animals and make sure they're happy.
+
+### Encapsulation
+
+Just like every other object oriented programming languages, keeping fields public is
+consideree bad practice. One of the reasons for this is that, if you decide to change the
+inner workings of your libraray, your users would also be affected and need to change their
+programs. If you, however, choose to keep to a specific public API, you are free to change
+the fields of objects as you want. Let's remove all the public fields from our accessors.
+
+You will notice a few things: First of all, we cannot instanciate the animals as we used
+to do (`Ape { banana_counter: 165, ... }`) since the fields are now private. Secondly, you
+cannot access those fields anymore, so your wranglers will have a bit of trouble if they
+can't know how many bananas an ape still has.
+
+When it comes to instanciation, there are no "constructors" in Rust. Instead, there are
+static functions whose purpose is to return a filled instance of the object.
+Let's create the following "constructors":
+
+- `Ape::with_bananas(bananas: u32)`
+- `Ape::new()`
+- `Gistre::sad()`
+- `Gistre::happy()`
+
+### Personel
+
+#### ApeWrangler
+
+An Ape wrangler can take care of a few apes at once. Their job is to refill their bananas,
+and keep them happy.
