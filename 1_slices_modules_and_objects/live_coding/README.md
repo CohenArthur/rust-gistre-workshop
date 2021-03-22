@@ -114,4 +114,15 @@ etc etc etc...
 
 I'm sure you've noticed that the role of an ApeWrangler is very simple. So simple, in fact
 that it could be generalized to different monkeys. After all, you only need to replenish
-their banana reserve and play with them a bit to make them happy.
+their banana reserve and play with them a bit to make them happy. Why don't you find a
+way to promote your `ApeWrangler` to a `MonkeyWrangler` and make them take care of many
+types of monkeys? Remember what we said about shared behavior in Rust? That's right, we're
+gonna need a `Monkey` trait! Feel free to define it however you want.
+
+You will also need to add functions taking references to trait objects. You should read
+the [following chapters of the Rust book](https://doc.rust-lang.org/book/ch10-02-traits.html#traits-as-parameters)
+(or wait for the next lesson). And remember that you can always ask us if something isn't
+clear!
+
+As usual, you can continue working on this exercise after the live-coding session has ended
+and ping us to get a review of your work!
