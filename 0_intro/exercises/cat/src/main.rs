@@ -1,7 +1,8 @@
 pub fn cat(path: &str) -> String {
-    todo!();
+    std::fs::read_to_string(path).expect("something went wrong reading the file")
 }
 
 fn main() {
-    todo!();
+    let res = cat("test");
+    print!("{}", res)
 }

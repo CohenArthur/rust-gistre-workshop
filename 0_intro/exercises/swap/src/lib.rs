@@ -1,5 +1,7 @@
 pub fn swap(a: &mut i32, b: &mut i32) {
-    todo!();
+    let tmp= *a;
+    *a = *b;
+    *b = tmp;
 }
 
 #[cfg(test)]
