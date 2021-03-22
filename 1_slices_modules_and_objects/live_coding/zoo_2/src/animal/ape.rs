@@ -35,8 +35,16 @@ impl Ape {
         self.banana_counter
     }
 
+    pub fn set_bananas(&mut self, banana_amount: u32) {
+        self.banana_counter = banana_amount
+    }
+
     pub fn is_happy(&self) -> bool {
         self.happy
+    }
+
+    pub fn set_happiness(&mut self, happiness: bool) {
+        self.happy = happiness
     }
 
     pub fn scream(&self) {
