@@ -31,7 +31,10 @@ mod tests {
 
     #[test]
     fn eat_banana_decreases_banana_counter() {
-        let mut ape = Ape { banana_counter : 15, happy : true };
+        let mut ape = Ape {
+            banana_counter: 15,
+            happy: true,
+        };
         ape.eat_banana();
 
         assert_eq!(ape.banana_counter, 14);
@@ -39,7 +42,10 @@ mod tests {
 
     #[test]
     fn zero_banana_means_ape_unhappy() {
-        let mut ape = Ape { banana_counter : 1, happy : true };
+        let mut ape = Ape {
+            banana_counter: 1,
+            happy: true,
+        };
         ape.eat_banana();
         ape.eat_banana();
 
