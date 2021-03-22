@@ -93,3 +93,25 @@ Let's create the following "constructors":
 
 An Ape wrangler can take care of a few apes at once. Their job is to refill their bananas,
 and keep them happy.
+
+Let's create our empty `ApeWrangler` struct so we can add methods to it.
+
+Your ApeWrangler should expose only one function through its public API. However, the type
+itself should have multiple functions in order to separate your code correctly. For example,
+the public function could be called `ApeWrangler::take_care()` and it would have to
+refill the banana reserves and make the monkeys happy. Let's implement the following
+function:
+
+- `ApeWrangler::take_care(apes: &mut [&mut Ape])`
+
+The `Ape` type must stay encapsulated! You might need to add other accessors to the struct.
+
+You can add more complexity to this wrangler, for example by giving them an original
+banana reserve that they have to divide equally between all apes based on their needs,
+etc etc etc...
+
+## 3 - Going further - Adding traits
+
+I'm sure you've noticed that the role of an ApeWrangler is very simple. So simple, in fact
+that it could be generalized to different monkeys. After all, you only need to replenish
+their banana reserve and play with them a bit to make them happy.
