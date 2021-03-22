@@ -25,7 +25,7 @@ impl Ape {
             happy: match banana_counter {
                 0 => false,
                 _ => true,
-            }
+            },
         }
     }
 

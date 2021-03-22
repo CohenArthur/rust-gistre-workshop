@@ -1,7 +1,3 @@
-pub struct ApeWrangler {
+pub struct ApeWrangler {}
 
-}
-
-impl ApeWrangler {
-
-}
+impl ApeWrangler {}
