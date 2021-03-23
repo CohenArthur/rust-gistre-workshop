@@ -62,4 +62,67 @@ as MAUTO, RGW (us :D), BSP...
 ## 2 - Encapsulating everything
 
 Right now everything is public, which is a bit sad when it comes to object oriented. Let's
-make constructors and private functions.
+make constructors and private functions. Let's also add personel, whose job is to take
+care of the animals and make sure they're happy.
+
+### Encapsulation
+
+Just like every other object oriented programming languages, keeping fields public is
+considered bad practice. One of the reasons for this is that, if you decide to change the
+inner workings of your library, your users would also be affected and need to change their
+programs. If you, however, choose to keep to a specific public API, you are free to change
+the fields of objects as you want. Let's remove all the public fields from our accessors.
+
+You will notice a few things: First of all, we cannot instanciate the animals as we used
+to do (`Ape { banana_counter: 165, ... }`) since the fields are now private. Secondly, you
+cannot access those fields anymore, so your wranglers will have a bit of trouble if they
+can't know how many bananas an ape still has.
+
+When it comes to instanciation, there are no "constructors" in Rust. Instead, there are
+static functions whose purpose is to return a filled instance of the object.
+Let's create the following "constructors":
+
+- `Ape::with_bananas(bananas: u32)`
+- `Ape::new()`
+- `Gistre::sad()`
+- `Gistre::happy()`
+
+### Personel
+
+#### ApeWrangler
+
+An Ape wrangler can take care of a few apes at once. Their job is to refill their bananas,
+and keep them happy.
+
+Let's create our empty `ApeWrangler` struct so we can add methods to it.
+
+Your ApeWrangler should expose only one function through its public API. However, the type
+itself should have multiple functions in order to separate your code correctly. For example,
+the public function could be called `ApeWrangler::take_care()` and it would have to
+refill the banana reserves and make the monkeys happy. Let's implement the following
+function:
+
+- `ApeWrangler::take_care(apes: &mut [&mut Ape])`
+
+The `Ape` type must stay encapsulated! You might need to add other accessors to the struct.
+
+You can add more complexity to this wrangler, for example by giving them an original
+banana reserve that they have to divide equally between all apes based on their needs,
+etc etc etc...
+
+## 3 - Going further - Adding traits
+
+I'm sure you've noticed that the role of an ApeWrangler is very simple. So simple, in fact
+that it could be generalized to different monkeys. After all, you only need to replenish
+their banana reserve and play with them a bit to make them happy. Why don't you find a
+way to promote your `ApeWrangler` to a `MonkeyWrangler` and make them take care of many
+types of monkeys? Remember what we said about shared behavior in Rust? That's right, we're
+gonna need a `Monkey` trait! Feel free to define it however you want.
+
+You will also need to add functions taking references to trait objects. You should read
+the [following chapters of the Rust book](https://doc.rust-lang.org/book/ch10-02-traits.html#traits-as-parameters)
+(or wait for the next lesson). And remember that you can always ask us if something isn't
+clear!
+
+As usual, you can continue working on this exercise after the live-coding session has ended
+and ping us to get a review of your work!
