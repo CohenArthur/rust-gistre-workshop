@@ -68,8 +68,8 @@ care of the animals and make sure they're happy.
 ### Encapsulation
 
 Just like every other object oriented programming languages, keeping fields public is
-consideree bad practice. One of the reasons for this is that, if you decide to change the
-inner workings of your libraray, your users would also be affected and need to change their
+considered bad practice. One of the reasons for this is that, if you decide to change the
+inner workings of your library, your users would also be affected and need to change their
 programs. If you, however, choose to keep to a specific public API, you are free to change
 the fields of objects as you want. Let's remove all the public fields from our accessors.
 
