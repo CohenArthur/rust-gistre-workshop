@@ -9,7 +9,11 @@
 /// of the same type.
 /// This exercise is EXTREMELY hard since it requires concepts we haven't seen yet. We
 /// can help you tho! Feel free to ask
+///
+/// Considering the nature of this execise, rustfmt is having a bit of trouble with our
+/// broken code. Remove the comments at line 16 and 45 to start the exercise
 
+/* FIXME: Remove this comment
 pub struct OrderedVec<T /* FIXME: Add a Trait bound here so that `PartialOrd` is necessary */> {
     vec: Vec, /* FIXME: Make this vector as generic */
 }
@@ -38,6 +42,7 @@ impl< /* FIXME: You need a type and a trait bound here */ > OrderedVec < /* FIXM
             .all(|tuple| tuple[0] <= tuple[1])
     }
 }
+*/ // FIXME: Remove this comment
 
 #[cfg(test)]
 mod tests {
