@@ -3,12 +3,12 @@
 // FIXME
 pub fn get_answer() -> Vec<i32> {
     let mut values = vec![0, 0];
-    modify_values(values);
+    modify_values(&mut values);
     values
 }
 
 // FIXME
-fn modify_values(values: Vec<i32>) {
+fn modify_values(values: &mut Vec<i32>) {
     values[0] = 4;
     values[1] = 2;
 }
@@ -18,13 +18,13 @@ fn modify_values(values: Vec<i32>) {
 // FIXME
 pub fn print_hello() {
     let mut msg = String::from("hello world");
-    let word = first_word(&msg); // Get a reference to the first word
+    let word = first_word(&mut msg); // Get a reference to the first word
 
-    msg.clear(); // Empty the message
     println!("The first word is: {}", word); // Print first word
+    msg.clear(); // Empty the message
 }
 
-fn first_word(msg: &String) -> &str {
+fn first_word(msg: &str) -> &str {
     msg.split_whitespace().nth(0).unwrap_or("")
 }
 
