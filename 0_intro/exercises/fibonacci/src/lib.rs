@@ -1,5 +1,17 @@
 pub fn fibo(v: u32) -> u32 {
-    todo!()
+    if v == 0 {
+        0
+    }
+    else {
+        let mut f1 = 0;
+        let mut f2 = 1;
+        for _ in 1..v {
+            let tmp = f2;
+            f2 = f1 + f2;
+            f1 = tmp;
+        }
+        f2
+    }
 }
 
 #[cfg(test)]

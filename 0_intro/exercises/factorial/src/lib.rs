@@ -1,5 +1,14 @@
 pub fn factorial(n: i32) -> i32 {
-    todo!()
+    let mut res = 1;
+    if n < 2 {
+        1
+    }
+    else {
+        for i in 2..n+1 {
+            res = res * i;
+        }
+        res
+    }
 }
 
 #[cfg(test)]
