@@ -1,9 +1,11 @@
 /// Finds the index of `value` in the sorted slice `v`
 /// Note: `value` will always implement the `Copy` Trait
 /// Returns the index if found, None otherwise
+/* FIXME: Remove this comment
 pub fn generic_binary_search<?>(v: &[?], value: ?) -> Option<usize> {
     unimplemented!();
 }
+*/ //FIXME: Remove this comment
 
 #[cfg(test)]
 mod tests {
