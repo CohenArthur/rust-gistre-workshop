@@ -1,5 +1,4 @@
 pub fn swap(a: &mut i32, b: &mut i32) {
-    todo!();
 }
 
 #[cfg(test)]
