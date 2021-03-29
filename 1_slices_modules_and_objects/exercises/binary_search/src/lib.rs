@@ -1,12 +1,27 @@
 /// Finds the index of `value` in the sorted slice `v`
 /// Returns the index if found, None otherwise
 pub fn binary_search(v: &[i32], value: i32) -> Option<usize> {
-    match v.binary_search(&value) {
-        Ok(res) => Some(res),
-        Err(_) => None
+    let mut high: i32 = v.len() as i32 - 1;
+    let mut low = 0;
+    
+    while high >= low {
+        let mid = ((high - low)) / 2 + low;
+        let mid_index = mid as usize;
+        let cur = v[mid_index];
+
+        if cur == value {
+            return Some(mid_index);
+        }
+        if cur < value {
+            low = mid + 1;
+        } else {
+            high = mid - 1;
+        }
     }
 
-    // Not sure it was supposed to be done like that ?
+    None
+
+    // Is it legit to allow overflow here since we know it will not cause issue ?
 }
 
 #[cfg(test)]
