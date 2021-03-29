@@ -5,17 +5,24 @@ pub struct OrderedVec {
 impl OrderedVec {
     /// Create a new, empty ordered vector
     pub fn new() -> OrderedVec {
-        todo!()
+        Self {
+            vec: Vec::new(),
+        }
     }
 
     /// Add an element to the vector, in order
     pub fn push(&mut self, value: i32) {
-        todo!()
+        self.vec.push(value);
+        let mut i = self.vec.len() - 1;
+        while i > 0 && self.vec[i] < self.vec[i - 1] {
+            self.vec.swap(i, i - 1); 
+            i -= 1;
+        }
     }
 
     /// Remove the first element from the vector and return it
     pub fn pop(&mut self) -> i32 {
-        todo!()
+        self.vec.remove(0)
     }
 
     pub fn is_sorted(&self) -> bool {
