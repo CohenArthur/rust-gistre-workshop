@@ -20,8 +20,6 @@ pub fn binary_search(v: &[i32], value: i32) -> Option<usize> {
     }
 
     None
-
-    // Is it legit to allow overflow here since we know it will not cause issue ?
 }
 
 #[cfg(test)]
