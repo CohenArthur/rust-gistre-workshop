@@ -13,26 +13,32 @@
 /// Considering the nature of this execise, rustfmt is having a bit of trouble with our
 /// broken code. Remove the comments at line 16 and 45 to start the exercise
 
-/* FIXME: Remove this comment
-pub struct OrderedVec<T /* FIXME: Add a Trait bound here so that `PartialOrd` is necessary */> {
-    vec: Vec, /* FIXME: Make this vector as generic */
+pub struct OrderedVec<T: PartialOrd> {
+    vec: Vec<T>,
 }
 
 // FIXME: Add genericity to this implementation
-impl< /* FIXME: You need a type and a trait bound here */ > OrderedVec < /* FIXME */ > {
+impl<T: PartialOrd> OrderedVec <T> {
     /// Create a new, empty ordered vector
-    pub fn new() -> OrderedVec /* FIXME */ {
-        todo!()
+    pub fn new() -> OrderedVec<T> {
+        Self {
+            vec: Vec::new(),
+        }
     }
 
     /// Add an element to the vector, in order
-    pub fn push(&mut self, value: /* FIXME */) {
-        todo!()
+    pub fn push(&mut self, value: T) {
+        self.vec.push(value);
+        let mut i = self.vec.len() - 1;
+        while i > 0 && self.vec[i] < self.vec[i - 1] {
+            self.vec.swap(i, i - 1); 
+            i -= 1;
+        }
     }
 
     /// Remove the first element from the vector and return it
-    pub fn pop(&mut self) -> /* FIXME */ {
-        todo!()
+    pub fn pop(&mut self) -> T {
+        self.vec.remove(0)
     }
 
     pub fn is_sorted(&self) -> bool {
@@ -42,7 +48,6 @@ impl< /* FIXME: You need a type and a trait bound here */ > OrderedVec < /* FIXM
             .all(|tuple| tuple[0] <= tuple[1])
     }
 }
-*/ // FIXME: Remove this comment
 
 #[cfg(test)]
 mod tests {
@@ -118,6 +123,7 @@ mod tests {
 
         assert!(ov.is_sorted());
 
+        assert_eq!(ov.pop(), 0.00000005);
         assert_eq!(ov.pop(), 0.19);
         assert_eq!(ov.pop(), 1.5);
     }
