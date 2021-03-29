@@ -1,7 +1,5 @@
 pub fn vec_strlen(vec: Vec<&str>) -> Vec<usize> {
-    let mut res = Vec::new();
-    vec.iter().for_each(|s| res.push(s.len()));
-    res
+    vec.iter().map(|s| s.len()).collect()
 }
 
 #[cfg(test)]
