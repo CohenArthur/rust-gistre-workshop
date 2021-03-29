@@ -1,27 +1,11 @@
 /// Finds the index of `value` in the sorted slice `v`
 /// Note: `value` will always implement the `Copy` Trait
 /// Returns the index if found, None otherwise
-pub fn generic_binary_search<T: PartialOrd + Copy>(v: &[T], value: T) -> Option<usize> {
-    let mut high: i32 = v.len() as i32 - 1;
-    let mut low = 0;
-    
-    while high >= low {
-        let mid = ((high - low)) / 2 + low;
-        let mid_index = mid as usize;
-        let cur = v[mid_index];
-
-        if cur == value {
-            return Some(mid_index);
-        }
-        if cur < value {
-            low = mid + 1;
-        } else {
-            high = mid - 1;
-        }
-    }
-
-    None
+/* FIXME: Remove this comment
+pub fn generic_binary_search<?>(v: &[?], value: ?) -> Option<usize> {
+    unimplemented!();
 }
+*/ //FIXME: Remove this comment
 
 #[cfg(test)]
 mod tests {
