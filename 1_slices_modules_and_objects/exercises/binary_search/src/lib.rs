@@ -1,7 +1,12 @@
 /// Finds the index of `value` in the sorted slice `v`
 /// Returns the index if found, None otherwise
 pub fn binary_search(v: &[i32], value: i32) -> Option<usize> {
-    unimplemented!();
+    match v.binary_search(&value) {
+        Ok(res) => Some(res),
+        Err(_) => None
+    }
+
+    // Not sure it was supposed to be done like that ?
 }
 
 #[cfg(test)]
