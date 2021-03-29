@@ -1,5 +1,5 @@
 pub fn vec_sum(vec: Vec<i32>) -> i32 {
-    todo!()
+    vec.iter().sum()
 }
 
 #[cfg(test)]
