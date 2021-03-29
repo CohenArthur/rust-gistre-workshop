@@ -1,12 +1,12 @@
 /// Create a sorted Vec from a `given` slice
 pub fn merge_sort(given: &[i32]) -> Vec<i32> {
-    if given.len() <= 1 {
-        return Vec::from(given);
+    match given.len() {
+        0 | 1 => Vec::from(given),
+        _ => {
+            let splitted = given.split_at(given.len() / 2);
+            merge(&merge_sort(splitted.0), &merge_sort(splitted.1))
+        }
     }
-
-    let splitted = given.split_at(given.len() / 2);
-    
-    merge(&merge_sort(splitted.0), &merge_sort(splitted.1))
 }
 
 /// Merge two sorted arrays into a new sorted Vec
@@ -16,7 +16,13 @@ fn merge(left: &[i32], right: &[i32]) -> Vec<i32> {
     let mut j = 0;
 
     while i < left.len() && j < right.len() {
-        res.push( if left[i] < right[j] { i += 1; left[i - 1] } else { j += 1; right[j - 1] } );
+        if left[i] < right[j] {
+            res.push(left[i]);
+            i += 1;
+        } else {
+            res.push(right[j]);
+            j += 1;
+        }
     }
 
     if i < left.len() {
