@@ -10,7 +10,7 @@
 /// ```
 // Side note: this doc example is also tested when running `cargo test`
 pub fn make_acronym(name: &str) -> String {
-    unimplemented!()
+    name.split_whitespace().map(|word| word.chars().nth(0).unwrap().to_ascii_uppercase()).collect::<String>()
 }
 
 #[cfg(test)]

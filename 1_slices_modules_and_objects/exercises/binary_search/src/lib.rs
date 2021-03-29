@@ -1,7 +1,27 @@
+use std::num::Wrapping;
+
 /// Finds the index of `value` in the sorted slice `v`
 /// Returns the index if found, None otherwise
 pub fn binary_search(v: &[i32], value: i32) -> Option<usize> {
-    unimplemented!();
+    let mut high = Wrapping(v.len() as i32 - 1);
+    let mut low = 0;
+    
+    while high.0 >= low {
+        let mid = Wrapping(((high.0 - low)) / 2 + low);
+        let mid_index = mid.0 as usize;
+        let cur = v[mid_index];
+
+        if cur == value {
+            return Some(mid_index);
+        }
+        if cur < value {
+            low = mid.0 + 1;
+        } else {
+            high = mid - Wrapping(1);
+        }
+    }
+
+    None
 }
 
 #[cfg(test)]
