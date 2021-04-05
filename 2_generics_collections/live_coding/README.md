@@ -37,3 +37,10 @@ in order to get the exchange rate to dollars for that money for example)
 
 The `Ouguiya` currency is interesting as it does not have "cents": It is a non-decimal
 currency. Therefore, you cannot have 16.2 Ouguiya. Only 16 or 17.
+
+__Exchange rate table__:
+|Currency|Exchange rate|
+|---|---|
+|Dollar|1|
+|Euro|1.17|
+|Ouguiya|0.03|
