@@ -3,7 +3,8 @@
 ## 1 - A simple bank
 
 Using the following type alias, create a `Bank` type that can hold any amount of money.
-Said banks should be able to be displayed on stdout, and show statistics about themselves.
+Said banks should be able to be displayed on stdout, and show (simple) statistics about
+themselves.
 
 ```rust
 type Money = u64;
@@ -20,6 +21,11 @@ Here's a non-exhaustive list of methods you could add:
 
 - `add_account(account_name)`
 - `add_money(account_name, money_amount)`
+
+Try to convey the results appropriately to your users, so that they know if adding an
+account failed or not. You should specify rules, such that no two accounts with the same
+name can be created for example, or that one cannot have more than a set amount of money
+(not very capitalistic of you but okay).
 
 ## 2 - Let's make our banks generic
 
@@ -38,9 +44,21 @@ in order to get the exchange rate to dollars for that money for example)
 The `Ouguiya` currency is interesting as it does not have "cents": It is a non-decimal
 currency. Therefore, you cannot have 16.2 Ouguiya. Only 16 or 17.
 
+Now, you need to change your bank type so that it is able to accept one type of currency.
+For example, you should be able to instanciate a bank called `bank_of_america` that only
+deals with dollars.
+
+Pro-tip: You can implement how a currency should be displayed for the whole trait, not
+just the implementors :)
+
 __Exchange rate table__:
 |Currency|Exchange rate|
 |---|---|
 |Dollar|1|
 |Euro|1.17|
 |Ouguiya|0.03|
+
+## 3 - Going further - International banks
+
+Alter your bank type so that it can hold any kind of money. For example, you can open an
+account at the `world_bank` using dollars, or using euros.
