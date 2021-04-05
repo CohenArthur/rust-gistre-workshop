@@ -32,8 +32,9 @@ name can be created for example, or that one cannot have more than a set amount 
 Banks usually do not deal with `u64`s, but rather with dollars, euros, or yens. Don't you
 think that our banks should reflect that?
 
-Create a `Money` trait in order to represent what a currency is. Then, implement that trait
-for a few money types, such as `Dollar`, `Euro` and `Ouguiya`, the malaysian currency.
+Remove the `Money` type alias, and create a `Money` trait in order to represent what a
+currency is. Then, implement that trait for a few money types, such as `Dollar`, `Euro`
+and `Ouguiya`, the malaysian currency.
 
 Considering our moneys all need a way to compare themselves, we need to at least have a
 `value` method. This method should return a `f64` and represent the dollar value of our
@@ -47,9 +48,6 @@ currency. Therefore, you cannot have 16.2 Ouguiya. Only 16 or 17.
 Now, you need to change your bank type so that it is able to accept one type of currency.
 For example, you should be able to instanciate a bank called `bank_of_america` that only
 deals with dollars.
-
-Pro-tip: You can implement how a currency should be displayed for the whole trait, not
-just the implementors :)
 
 __Exchange rate table__:
 |Currency|Exchange rate|

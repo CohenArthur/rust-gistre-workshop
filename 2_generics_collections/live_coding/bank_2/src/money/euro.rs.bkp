@@ -1,0 +1,33 @@
+// Let's make euros a bit more interesting and keep an amount of cents and an amount of
+// integers
+pub struct Euro {
+    integer: u64,
+    decimal: u64,
+}
+
+impl super::Money for Euro {
+    fn amount(&self) -> f64 {
+        self.integer as f64 + self.decimal as f64 / 100f64
+    }
+
+    fn exchange_rate(&self) -> f64 {
+        1.17
+    }
+}
+
+impl From<f64> for Euro {
+    fn from(amount: f64) -> Self {
+        Euro {
+            integer: amount as u64,
+            decimal: amount - amount as u64,
+        }
+    }
+}
+
+use std::fmt;
+
+impl fmt::Display for Euro {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{}.{} euros", self.integer, self.decimal)
+    }
+}
