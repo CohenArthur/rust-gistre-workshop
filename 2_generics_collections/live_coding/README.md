@@ -1,4 +1,4 @@
-# Let's implement capitalism
+# Let's implement some banks
 
 ## 1 - A simple bank
 
@@ -10,12 +10,12 @@ themselves.
 type Money = u64;
 ```
 
-Because this is capitalism and everyone is rich, we assume that we cannot have negative
-money. On the contrary, we can have up to 18446744073709551615 monies, Jeff Bezos style.
+We can assume that we cannot have negative money. On the contrary, we can have up to
+18446744073709551615 monies (`u64::MAX`), Jeff Bezos style.
 
 A bank should be a collection of money, for exemple by keeping a list of accounts associated
 with someone's name. You should add methods to your bank in order to ease up adding up
-a new account or adding money to an account (we can't lose money under capitalism, obviously).
+a new account or adding money to an account.
 
 Here's a non-exhaustive list of methods you could add:
 
@@ -24,8 +24,7 @@ Here's a non-exhaustive list of methods you could add:
 
 Try to convey the results appropriately to your users, so that they know if adding an
 account failed or not. You should specify rules, such that no two accounts with the same
-name can be created for example, or that one cannot have more than a set amount of money
-(not very capitalistic of you but okay).
+name can be created for example, or that one cannot have more than a set amount of money.
 
 ## 2 - Let's make our banks generic
 
