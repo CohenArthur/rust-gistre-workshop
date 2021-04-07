@@ -24,16 +24,16 @@ impl Bank {
         }
     }
 
-    pub fn add_money(&mut self, account_name: &str, money_amount: Money) {
-        let current_amount = match self.accounts.get(account_name) {
-            None => 0,
-            Some(amount) => *amount,
-        };
-
-        self.accounts.insert(
-            String::from(account_name),
-            current_amount.clone() + money_amount,
-        );
+    /// Return true if the account was updated successfully, false if it didn't
+    /// exist already
+    pub fn add_money(&mut self, account_name: &str, money_amount: Money) -> bool {
+        match self.accounts.get_mut(account_name) {
+            None => false,
+            Some(amount) => {
+                *amount += money_amount;
+                true
+            }
+        }
     }
 
     fn mean(&self) -> Money {
