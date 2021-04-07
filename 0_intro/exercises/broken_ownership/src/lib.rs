@@ -20,8 +20,8 @@ pub fn print_hello() {
     let mut msg = String::from("hello world");
     let word = first_word(&mut msg); // Get a reference to the first word
 
-    msg.clear(); // Empty the message
     println!("The first word is: {}", word); // Print first word
+    msg.clear(); // Empty the message
 }
 
 fn first_word(msg: &str) -> &str {
