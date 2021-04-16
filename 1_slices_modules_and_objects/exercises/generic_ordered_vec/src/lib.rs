@@ -118,6 +118,7 @@ mod tests {
 
         assert!(ov.is_sorted());
 
+        assert_eq!(ov.pop(), 0.00000005);
         assert_eq!(ov.pop(), 0.19);
         assert_eq!(ov.pop(), 1.5);
     }
