@@ -29,6 +29,17 @@ only the changes you wish to show us.
 works the same as in Discord, `@<username>` will notify the user. Checkout [the team](#the-team)
 for our Github usernames! We will review the code as well as give you tips if you need them.
 
+# Update your fork
+
+To update your fork, you could run the following commands:
+```sh
+[[ $(git remote | grep upstream) ]] \
+  || git remote add upstream https://github.com/CohenArthur/rust-gistre-workshop.git
+git fetch upstream
+git checkout master
+git rebase upstream/master
+```
+
 # Misc
 
 A *lot* of resources are available to learn Rust online!
