@@ -33,11 +33,11 @@ for our Github usernames! We will review the code as well as give you tips if yo
 
 To update your fork, you could run the following commands:
 ```sh
-$ [[ $(git remote | grep upstream) ]] \
+[[ $(git remote | grep upstream) ]] \
   || git remote add upstream https://github.com/CohenArthur/rust-gistre-workshop.git
-$ git fetch upstream
-$ git checkout master
-$ git rebase upstream/master
+git fetch upstream
+git checkout master
+git rebase upstream/master
 ```
 
 # Misc
